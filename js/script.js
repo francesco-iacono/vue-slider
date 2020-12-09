@@ -11,17 +11,30 @@ var app = new Vue(
         'https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg'
       ]
     },
+    created: function () {
+      this.autoPlay = setInterval(
+        () => {
+          this.nextImage();
+        }, 2000
+      );
+    },
     methods: {
+      clickNextImage: function () {
+        clearInterval(this.autoPlay);
+        this.nextImage();
+      },
+      clickPrevImage: function () {
+        clearInterval(this.autoPlay);
+        this.prevImage();
+      },
       nextImage: function () {
         this.imageIndex++;
-
         if (this.imageIndex == this.images.length) {
             this.imageIndex = 0;
         }
       },
       prevImage: function () {
         this.imageIndex--;
-
         if (this.imageIndex == -1) {
             this.imageIndex = this.images.length -1;
         }

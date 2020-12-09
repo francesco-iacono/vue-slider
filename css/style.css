@@ -20,14 +20,17 @@
     height: 100%;
     text-align: center;
 }
+.images {
+  width: 80%;
+  margin: auto;
+}
 .slider-wrapper .images img {
-    display: none;
+    width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
     box-shadow: 0 0 15px black;
     border: 10px solid #ffff;
-}
-.slider-wrapper .images img.active {
-    display: inline-block;
 }
 .prev, .next {
     position: absolute;
