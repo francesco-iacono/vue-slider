@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <!-- google font -->
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <!-- foglio stile -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- vue -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+        <title>Vue Slider</title>
+    </head>
+    <body>
+        <div id="root">
+          <!-- slider wrapper -->
+            <div class="slider-wrapper">
+              <!-- Freccia verso sinistra -->
+                <div class="prev">
+                    <i class="fas fa-angle-left" @click='prevImage'></i>
+                </div>
+                <!-- immagini -->
+                <div class="images">
+                    <img class="active" :src="images[imageIndex]" alt="">
+                </div>
+                <!-- Freccia verso destra -->
+                <div class="next">
+                    <i class="fas fa-angle-right" @click='nextImage'></i>
+                </div>
+                <!-- cerchi -->
+                <div class="nav">
+                    <i v-for="(image, index) in images" class="fas fa-circle" :class="(index == imageIndex) ? 'active' : ''"></i>
+                </div>
+            </div>
+            <!-- /slider wrapper -->
+        </div>
+        <!-- foglio js -->
+        <script src="js/script.js"></script>
+    </body>
+</html>
