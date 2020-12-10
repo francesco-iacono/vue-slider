@@ -31,7 +31,7 @@
                 </div>
                 <!-- cerchi -->
                 <div class="nav">
-                    <i v-for="(image, index) in images" class="fas fa-circle" :class="(index == imageIndex) ? 'active' : ''"></i>
+                    <i v-for="(image, index) in images" class="fas fa-circle" :class="(index == imageIndex) ? 'active' : ''" @click="goToImage(index)"></i>
                 </div>
             </div>
             <!-- /slider wrapper -->

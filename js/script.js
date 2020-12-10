@@ -9,7 +9,8 @@ var app = new Vue(
         'https://static.photocdn.pt/images/articles/2017/04/28/iStock-646511634.jpg',
         'https://cdn.mos.cms.futurecdn.net/FUE7XiFApEqWZQ85wYcAfM.jpg',
         'https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg'
-      ]
+      ],
+      autoPlay: ''
     },
     created: function () {
       this.autoPlay = setInterval(
@@ -19,6 +20,10 @@ var app = new Vue(
       );
     },
     methods: {
+      goToImage: function (newIndex) {
+        clearInterval(this.autoPlay);
+        this.imageIndex = newIndex;
+      } ,
       clickNextImage: function () {
         clearInterval(this.autoPlay);
         this.nextImage();
